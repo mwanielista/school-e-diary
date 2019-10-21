@@ -7,7 +7,7 @@
 
           <?php
             if(isset($_SESSION['userId'])) {
-                echo "<p>You are logged in</p>";
+                echo "<p>You are loggeed in</p>";
                 echo '
                     <style type="text/css">
                         #login {
