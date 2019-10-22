@@ -9,8 +9,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-  
-    
 }
 .site-wrapper{
     margin: 0;
@@ -78,6 +76,9 @@ a.btn{
     margin:0;
   }
 
+  .main-title{
+    text-align: center;
+  }
 
 /* index */
 .login_notification{
@@ -135,3 +136,4 @@ a.btn{
   color: #fff;
   font-size: 2em;
 }
+
