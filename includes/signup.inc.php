@@ -6,6 +6,9 @@
         $email = $_POST['mail'];
         $password = $_POST['pwd'];
         $passwordRepeat = $_POST['pwd-repeat'];
+        $checksum = $_POST['check_sum'];
+
+        $auth_code = "ZS3.is.the.best";
 
         if(empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
             header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$mail);
@@ -38,6 +41,9 @@
                
                 if($resultCheck > 0) {
                     header("Location: ../signup.php?error=usertaken&mail=".$email);
+                    exit();
+                } else if($checksum != $auth_code) {
+                    header("Location: ../signup.php?error=invalidauthcode&mail=".$email);
                     exit();
                 } else {
                     $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES(?, ?, ?)";

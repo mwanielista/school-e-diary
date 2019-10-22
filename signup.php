@@ -30,6 +30,11 @@
                         <input type="password" name="pwd-repeat" id="pwd-repeat">
                         <label for="pwd-repeat">Repeat password</label>
                     </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">checksum</i>
+                        <input type="text" name="check_sum" id="check_sum">
+                        <label for="checksum">Authorize code</label>
+                    </div>
                     <button type="submit" name="signup-submit" class="btn btn-large">Signup</button>
                 </form>
             </div>
