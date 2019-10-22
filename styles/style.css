@@ -18,6 +18,12 @@ body{
     background: #222629;
     height: 100vh;
 }
+.afterlogin{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
 
 /*header*/
 * {box-sizing: border-box;}
@@ -119,4 +125,13 @@ a.btn{
 }
 .form h4 {
   text-align: center;
+}
+
+
+/*after login*/
+.heading-text{
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
 }

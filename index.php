@@ -28,12 +28,7 @@
 
 <div class="site-wrapper">
     <main>
-          <div class="login_notification">
-
-        
-            
-            
-         </div>
+          
     </main>
 
 <?php

@@ -8,7 +8,7 @@
         $passwordRepeat = $_POST['pwd-repeat'];
         $checksum = $_POST['check_sum'];
 
-        $auth_code = "ZS3.is.the.best";
+        $auth_code = "zs3";
 
         if(empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
             header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$mail);
