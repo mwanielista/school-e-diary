@@ -18,12 +18,33 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Custom styles for this template-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
-     
-       
-        
     </head>
     <body>
+        <header>
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.php">E-Diary</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link modal-trigger" id="login" href="#loginBox">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="signup" href="signup.php">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link modal-trigger" id="logout" href="#lgout">Logout</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+        </header>
         

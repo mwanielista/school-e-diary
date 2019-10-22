@@ -1,5 +1,18 @@
 <?php
     require "header.php";
+    echo '
+            <style type="text/css">
+                #login {
+                    visibility: hidden;   
+                }
+                #signup {
+                    visibility: hidden;   
+                }
+                #logout {
+                    visibility: hidden;   
+                }
+            </style>
+        ';
 ?>
 <div class="site-wrapper">
     <main>

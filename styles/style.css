@@ -50,45 +50,101 @@ body{
   background-color: #86c232;
   color: white;
 }
-
-/*login box */
-a.btn{
-    margin-top: 30%;
-    
-  }
-  .modal{
-   max-height:100%;
-   overflow:hidden;
-   
-  }
-  
-  button[type="submit"]{
-    background-color: #86c232;
-    width: 100%;
-    margin-top: 50px;
-  }
-  .modal-close{
-    color: #000;
-    position: absolute;
-    top:10px;
-    right:10px;
-    padding:0;
-    margin:0;
-  }
-
-  .main-title{
-    text-align: center;
-  }
-
-/* index */
-.login_notification{
-    margin: 0 auto;
-    padding: 15px;
-    width: 40%;
-    border: 2px solid #000;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.5);
+.break{
+  height: 200px;
+  background: rgb(45, 51, 56);
+  color: #fff;
+  padding-top: 70px;
+  text-align: center;
 }
+/*login box */
+.login-dark {
+  height:500px;
+  background: url('https://source.unsplash.com/zFSo6bnZJTw/1280x720');
+  background-size:cover;
+  position:relative;
+}
+
+.login-dark form {
+  max-width:320px;
+  width:90%;
+  background-color:#1e2833;
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+}
+
+.login-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:100px;
+  color:#2980ef;
+}
+
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+
+.login-dark form .btn-primary {
+  background:#214a80;
+  border:none;
+  border-radius:4px;
+  padding:11px;
+  box-shadow:none;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
+}
+
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#214a80;
+  outline:none;
+}
+
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
+}
+
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
+}
+
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
+}
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+ /* background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');*/
+  background-image: url('https://source.unsplash.com/OyCl7Y4y0Bk/1920x1080');
+  /* filter: brightness(50%); */
+  background-color: rgb(0, 0, 0);
+  opacity: 2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#sticky-footer {
+  flex-shrink: none;
+}
+
 
 .section a.btn{
   margin-top: 30%;
