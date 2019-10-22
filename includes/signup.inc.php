@@ -24,17 +24,18 @@
             exit();
         }   else {
             
-            $sql = "SELECT uidUsers FROM users WHERE uidUsers=? AND uidUsers=?";
+            $sql = "SELECT uidUsers FROM users WHERE uidUsers=? OR emailUsers=?";
             $stmt = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($stmt, $sql)) {
                 header("Location: ../signup.php?error=sqlerror");
                 exit();
             } else {
-                mysqli_stmt_bind_param($stmt, "s", $username); //s - string, b- boolean, double - d ile parametrów tyle liter
+                mysqli_stmt_bind_param($stmt, "ss", $username, $email); //s - string, b- boolean, double - d ile parametrów tyle liter
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_store_result($stmt);
                 $resultCheck = mysqli_stmt_num_rows($stmt);
+               
                 if($resultCheck > 0) {
                     header("Location: ../signup.php?error=usertaken&mail=".$email);
                     exit();
