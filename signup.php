@@ -14,45 +14,25 @@
             </style>
         ';
 ?>
-<div class="site-wrapper">
-    <main>
-          <div class="section">
-             <!--signup box -->
-            <div class="form">
-                <h4>Signup:</h4>
-                <br>
-                <form action="includes/signup.inc.php" method="POST">
-                    <div class="input-field">
-                        <i class="material-icons prefix">person</i>
-                        <input type="text" name="uid" id="uid">
-                        <label for="uid">Username</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">email</i>
-                        <input type="text" name="mail" id="mail">
-                        <label for="mail">email</label>
-                    </div>
-                    
-                    <div class="input-field">
-                        <i class="material-icons prefix">lock</i>
-                        <input type="password" name="pwd" id="pwd">
-                        <label for="pwd">Password</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">lock</i>
-                        <input type="password" name="pwd-repeat" id="pwd-repeat">
-                        <label for="pwd-repeat">Repeat password</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">checksum</i>
-                        <input type="text" name="check_sum" id="check_sum">
-                        <label for="checksum">Authorize code</label>
-                    </div>
-                    <button type="submit" name="signup-submit" class="btn btn-large">Signup</button>
+    <div class="signup-page">
+        <section class="signup">
+            <div class="bg-blur"></div>
+            <div class="signup-dark" id="signup-sect">
+                <form method="post" action="includes/signup.inc.php">
+                    <h2>Zarejestruj się</h2>
+                    <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                    <div class="form-group"><input class="form-control" type="text" name="uid" placeholder="username"></div>
+                    <div class="form-group"><input class="form-control" type="text" name="mail" placeholder="Email"></div>
+                    <div class="form-group"><input class="form-control" type="password" name="pwd" placeholder="Password"></div>
+                    <div class="form-group"><input class="form-control" type="password" name="pwd-repeat" placeholder="Repeat password"></div>
+                    <div class="form-group"><input class="form-control" type="text" name="check_sum" placeholder="Auth code"></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" name="signup-submit" type="submit">Sign up</button></div>
                 </form>
             </div>
+            
+
+            </section>
          </div>
-    </main>
 <?php
     require "footer.php";
 ?>

@@ -36,21 +36,6 @@
             <div style="clear: both" class="container about-product">
                 <h2 class="font-weight-light">E-Diary dla rodziców
                 By budować dobre relacje i owocną współpracę</h2>
-                  <!--   Korzystanie z dziennika elektronicznego UONET+ umożliwia rodzicom:
-                    <ul>
-                        <li>szybką i wygodną komunikację ze szkołą,</li>
-                        <li>łatwy wgląd w bieżące dane dotyczące dziecka,</li>
-                        <li>aktywne wspieranie dzieci w codziennej edukacji,</li>
-                        <li>przygotowanie się do rozmowy z nauczycielami.</li>
-                    </ul>
-               <img alt="img"class="students-image"src="img/student2.png"/></p> -->
-
-
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque felis vitae quam commodo porta. 
-                   Aenean maximus, sapien vitae euismod cursus, turpis nunc tincidunt massa, eget scelerisque lectus mauris eu mauris. 
-                    Nullam volutpat lacus vestibulum tellus sollicitudin, id lacinia turpis laoreet.
-                    <img alt="img"class="students-image"src="img/student2.png"/></p> -->
-
                     <p><img src="img/student2.png" alt="students">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, 
                     nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. 
