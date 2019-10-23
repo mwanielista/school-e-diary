@@ -21,8 +21,18 @@ body{
     padding: 0;
     color: #fff;
 }
-
-
+.students-image{
+  align-content: center;
+}
+.page-content ul{
+  width: 300px;
+}
+.about-product{
+  padding: 40px;
+}
+.about-product img{
+    float: right;
+}
 /*header*/
 * {box-sizing: border-box;}
 
@@ -57,6 +67,7 @@ body{
   padding-top: 70px;
   text-align: center;
 }
+
 /*login box */
 .login-dark {
   height:500px;

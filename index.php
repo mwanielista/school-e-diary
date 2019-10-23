@@ -14,17 +14,17 @@
             </div>
         </div>
         <section class="break">
-            <h2>Want's more? Check my other projects</h2>
+            <h2>e-diary.com</h2>
 
         </section>
         <section class="login">
-            <div class="login-dark">
-            <form method="post">
+            <div class="login-dark" id="login-sect">
+            <form method="post" action="includes/login.inc.php">
                 <h2>Zaloguj się</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email/username"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a>
+                <div class="form-group"><input class="form-control" type="text" name="mailuid" placeholder="Email/username"></div>
+                <div class="form-group"><input class="form-control" type="password" name="pwd" placeholder="Password"></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" name="login-submit" type="submit">Log In</button></div>
             </form>
         </div>
            
@@ -32,73 +32,37 @@
         </section>
 
         <!-- Page Content -->
-        <section class="py-5">
-        <div class="container">
-            <h2 class="font-weight-light">E-Diary dla rodziców
-            By budować dobre relacje i owocną współpracę</h2>
-                Korzystanie z dziennika elektronicznego UONET+ umożliwia rodzicom:
-                <ul>
-                    <li>szybką i wygodną komunikację ze szkołą,</li>
-                    <li>łatwy wgląd w bieżące dane dotyczące dziecka,</li>
-                    <li>aktywne wspieranie dzieci w codziennej edukacji,</li>
-                    <li>przygotowanie się do rozmowy z nauczycielami.</li>
-                </ul>
-        </div>
+        <section class="page-content">
+            <div style="clear: both" class="container about-product">
+                <h2 class="font-weight-light">E-Diary dla rodziców
+                By budować dobre relacje i owocną współpracę</h2>
+                  <!--   Korzystanie z dziennika elektronicznego UONET+ umożliwia rodzicom:
+                    <ul>
+                        <li>szybką i wygodną komunikację ze szkołą,</li>
+                        <li>łatwy wgląd w bieżące dane dotyczące dziecka,</li>
+                        <li>aktywne wspieranie dzieci w codziennej edukacji,</li>
+                        <li>przygotowanie się do rozmowy z nauczycielami.</li>
+                    </ul>
+               <img alt="img"class="students-image"src="img/student2.png"/></p> -->
+
+
+               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque felis vitae quam commodo porta. 
+                   Aenean maximus, sapien vitae euismod cursus, turpis nunc tincidunt massa, eget scelerisque lectus mauris eu mauris. 
+                    Nullam volutpat lacus vestibulum tellus sollicitudin, id lacinia turpis laoreet.
+                    <img alt="img"class="students-image"src="img/student2.png"/></p> -->
+
+                    <p><img src="img/student2.png" alt="students">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, 
+                    nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. 
+                    Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                     Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus 
+                     interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. 
+                     In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                    </p>
+            </div>
         </section>
 
-
-       <!--login box -->
-        <div id="loginBox" class="modal">
-            <h5 class="modal-close">&#10005;</h5>
-            <div class="modal-content center">
-                <h4>Login</h4>
-                <br>
-                <form action="includes/login.inc.php" method="POST">
-                    <div class="input-field">
-                        <i class="material-icons prefix">person</i>
-                        <input type="text" name="mailuid" id="name">
-                        <label for="name">Username</label>
-                    </div>
-                    <br>
-                    <div class="input-field">
-                        <i class="material-icons prefix">lock</i>
-                        <input type="password" name="pwd" id="pass">
-                        <label for="pass">Password</label>
-                    </div><br>
-                    <button type="submit" name="login-submit" class="btn btn-large">Login</button>
-                </form>
-            </div>
-        </div>
-
-        <!--logout box -->
-        <div id="lgout" class="modal">
-            <h5 class="modal-close">&#10005;</h5>
-            <?php
-                if(isset($_SESSION['userId'])) {
-                        echo '
-                        <div class="modal-content center">
-                            <h4>Na pewno chcesz się wylogować?</h4>
-                            <br>
-                            <form action="includes/logout.inc.php" method="POST">   
-                                <button type="submit" name="logout-submit" class="btn btn-large">logout</button>
-                            </form>
-                        </div>
-                        ';
-                    } else{
-                        echo '
-                        <div class="modal-content center">
-                            <h4>Nie jesteś zalogowany, nie możesz się wylogować</h4>
-                            <br>
-                        </div>
-                        ';
-                    }
-             ?>
-        </div>
-        <script>
-            $(document).ready(function(){
-            $('.modal').modal();
-        });
-        </script>
+        
 
 <?php
     require "footer.php";
