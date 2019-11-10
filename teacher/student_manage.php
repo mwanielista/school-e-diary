@@ -222,7 +222,7 @@
                             </div>
                             <div class="table-data__tool-right">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Dodaj ucznia</button>
+                                    <a href="student_add.php"><i class="zmdi zmdi-plus"></i>Dodaj ucznia</button></a>   //zmienić kolor
 
                             </div>
                         </div>
@@ -256,7 +256,7 @@
                                       <tr class="tr-shadow">
                                         <td>
                                             <label class="au-checkbox">
-                                                <input type="checkbox" name="'.
+                                                <input type="checkbox" value="'.
                                       $row['idUsers'].
                                       '">
                                                 <span class="au-checkmark"></span>
@@ -270,7 +270,9 @@
                                       $row['emailUsers'].
                                       '</span>
                                         </td>
-                                        <td class="desc">1 klasa</td>
+                                        <td class="desc">'.
+                                      $row['class'].
+                                      '</td>
                                         
                                         <td>
                                             <span class="status--process">'.
