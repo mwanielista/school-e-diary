@@ -222,7 +222,6 @@ body{
 }
 
 .signup-dark form {
-  z-index: 99999;
   max-width:320px;
   width:90%;
   background-color:#1e2833;

@@ -20,7 +20,6 @@
                 <div class="signup-dark" id="signup-sect">
                     <form method="post" action="includes/signup.inc.php">
                         <h2>Zarejestruj się</h2>
-                        <div class="illustration"><i class="fas fa-user"></i></div>
                         <div class="form-group"><input class="form-control" type="text" name="uid" placeholder="username"></div>
                         <div class="form-group"><input class="form-control" type="text" name="mail" placeholder="Email"></div>
                         <div class="form-group"><input class="form-control" type="password" name="pwd" placeholder="Password"></div>
