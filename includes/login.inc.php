@@ -27,7 +27,9 @@
                         session_start();        //start of logged user session
                         $_SESSION[userId] = $row['idUsers'];
                         $_SESSION[userUid] = $row['uidUsers'];
-                        header("Location: ../afterlogin.php?login=success");    
+                        $_SESSION[emailUsers] = $row['emailUsers'];
+                        $_SESSION[userLevel] = $row['userLevel'];
+                        header("Location: ../afterlogin.php?login=success");
                         exit();
                     }   else {
                         header("Location: ../index.php?error=wrongpassword");    

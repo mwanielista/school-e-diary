@@ -1,5 +1,11 @@
 <?php
     require "header.php";
+
+    if(isset($_GET['logout'])){
+        if($_GET['logout'] == true){
+            header("Location: includes/logout.inc.php");
+        }
+    }
 ?>
         <div id="black">
             <div class="masthead">
