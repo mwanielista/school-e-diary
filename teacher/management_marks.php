@@ -1,17 +1,16 @@
+<?php
+session_start();
+require 'head.php';
+require 'includes/connect.inc.php'
+?>
 
-    <?php
-        require 'head.php';
-        session_start();
-
-
-    ?>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="index.php">
                             <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -106,13 +105,13 @@
                                 <i class="fas fa-copy"></i>Zarządzanie</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">Frekwencja</a>
+                                    <a href="management_frequency.php">Frekwencja</a>
                                 </li>
                                 <li>
-                                    <a href="#">Oceny</a>
+                                    <a href="management_marks.php">Oceny</a>
                                 </li>
                                 <li>
-                                    <a href="#">Projekty</a>
+                                    <a href="management_projects.php">Projekty</a>
                                 </li>
                             </ul>
                         </li>
@@ -215,101 +214,85 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <h1>Uczniowie:</h1>
-                        <!-- DATA TABLE -->
                         <div class="table-data__tool">
+                            <h1>Oceny:</h1>
                             <div class="table-data__tool-left">
                             </div>
                             <div class="table-data__tool-right">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <a href="student_add.php"><i class="zmdi zmdi-plus"></i>Dodaj ucznia</button></a>   //zmienić kolor
+                                    <a href="mark_add.php"><i class="zmdi zmdi-plus"></i>Dodaj ocenę</a></button>   //zmienić kolor
 
                             </div>
                         </div>
-                        <div class="table-responsive table-responsive-data2">
-                            <table class="table table-data2">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <label class="au-checkbox">
-                                            <input type="checkbox">
-                                            <span class="au-checkmark"></span>
-                                        </label>
-                                    </th>
-                                    <th>nazwa</th>
-                                    <th>email</th>
-                                    <th>class</th>
+                        <?php
 
-                                    <th>status</th>
-                                    <th></th>
+                            $quest = "select * from classes";
+                            $query = mysqli_query($conn, $quest);
+                            echo'<form class="select" method="POST">';
+                            echo '<h4>Wybierz klasę</h4>';
+                            echo '<select name="select_class">';
+                            while($row = mysqli_fetch_array($query)){
+                                echo '<option value="'.$row['name'].'">'.$row['name'].'</option>';
+                            }
+                            echo "</select>";
+                            echo'<input type="submit" class="au-btn" name="sbm_class">';
+                            echo '</form>';
+                            $klasa = null;
+                            if(isset($_POST['sbm_class'])){
+                                $class = $_POST['select_class'];
+                                $quest_users = "select * from users where class like '$class'";
+                                $query = mysqli_query($conn, $quest_users);
+                                echo'<form class="select" method="POST">';
+                                echo '<h4>Wybierz ucznia</h4>';
+                                echo '<select name="select_user">';
+                                while($row = mysqli_fetch_array($query)){
+                                    echo '<option value="'.$row['idUsers'].'">'.$row['uidUsers'].'</option>';
+                                }
+                                echo "</select>";
 
-                                </tr>
-                                </thead>
-                                <tbody>
+                                echo '<h4>Wybierz przedmiot:</h4>';
+                                echo '<select name="select_subject">';
+                                $quest_subject = "select * from przedmioty";
+                                $query2 = mysqli_query($conn, $quest_subject);
+                                while($row2 = mysqli_fetch_array($query2)){
+                                    echo '<option value="'.$row2['name'].'">'.$row2['name'].'</option>';
+                                }
+                                echo "</select>";
+                                echo'<input type="submit" class="au-btn" name="show_marks">';
+                                echo '</form>';
+                            }
 
-                                <?php
-                                require 'includes/connect.inc.php';
-                                $quest = "select * from users where userLevel like 'student'";
-                                $query = mysqli_query($conn, $quest);
-                                while ($row = mysqli_fetch_array($query)) {
-                                  echo '
-                                      <tr class="tr-shadow">
-                                        <td>
-                                            <label class="au-checkbox">
-                                                <input type="checkbox" value="'.
-                                      $row['idUsers'].
-                                      '">
-                                                <span class="au-checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <td>'.
-                                      $row['uidUsers'].
-                                      '</td>
-                                        <td>
-                                            <span class="block-email">'.
-                                      $row['emailUsers'].
-                                      '</span>
-                                        </td>
-                                        <td class="desc">'.
-                                      $row['class'].
-                                      '</td>
-                                        
-                                        <td>
-                                            <span class="status--process">'.
-                                      $row['userLevel'].
-                                      '</span>
-                                        </td>
-                                       
-                                        <td>
-                                            <div class="table-data-feature">
-                                            <form method="POST">
-                                                <button value="'.$row['idUsers'].'"class="item" name="delete_btn" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                    <i class="zmdi zmdi-delete"></i>
-                                                </button>
-                                            </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="spacer"></tr>
-                                  ';
+                            if(isset($_POST['show_marks'])){
+                                echo '<style>.select{visibility: hidden}</style>';
+                                $user = $_POST['select_user'];
+                                $select_username = "select * from users where idUsers like $user";
+                                $query_username = mysqli_query($conn, $select_username);
+                                while($row = mysqli_fetch_array($query_username)){
+                                    $username = $row['uidUsers'];
+                                }
+                                $subject = $_POST['select_subject'];
+                                echo '<h4>Wybrano użytkownika <b> '.$username . '</b> i przedmiot <b>'. $klasa.'</b></h4>';
+                                $select_marks = "select * from oceny where uczen = $user and przedmiot = '$subject'";
+                                $query_marks = mysqli_query($conn, $select_marks);
+                                if(!$query_marks){
+                                    echo"nie masz ocen";
                                 }
 
-                                if(isset($_POST['delete_btn'])){
-                                    $value = $_POST['delete_btn'];
-                                    $delete_quest = "delete from users where idUsers like '$value'";
-                                    $query = mysqli_query($conn, $delete_quest);
-                                    if($query){
-                                        echo"udało się ";
-                                    } else {
-                                        echo "kicha";
-                                    }
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- END DATA TABLE -->
+                                echo '<div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <tbody>';
 
+                                while($row = mysqli_fetch_array($query_marks)){
+                                    echo ' <tr>
+                                                <td>'.$row['ocena'].'</td>
+                                                <td class="text-right">'.$row['przedmiot'].'</td>
+                                           </tr>';
+                                }
+                                echo '</tbody></table></div></div></div>';
+                            }
+                        ?>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
@@ -326,34 +309,6 @@
 
     </div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
-
-    </body>
-
-    </html>
-    <!-- end document-->
-
-    </body>
-</html>
+<?php
+require 'footer_pages.php'
+?>

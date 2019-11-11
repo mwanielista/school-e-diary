@@ -104,13 +104,13 @@
                             <i class="fas fa-copy"></i>Zarządzanie</a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="#">Frekwencja</a>
+                                <a href="management_frequency.php">Frekwencja</a>
                             </li>
                             <li>
-                                <a href="#">Oceny</a>
+                                <a href="management_marks.php">Oceny</a>
                             </li>
                             <li>
-                                <a href="#">Projekty</a>
+                                <a href="management_projects.php">Projekty</a>
                             </li>
                         </ul>
                     </li>
